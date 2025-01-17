@@ -1,5 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
+const winAudio = new Audio("winSound.mp3");
+const looseAudio = new Audio("looseSound.mp3");
+const tieAudio = new Audio("tieSound.mp3");
 
 function getComputerChoice() {
   const choices = ["Rock", "Paper", "Scissors"];
@@ -9,6 +12,7 @@ function getComputerChoice() {
 
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
+    tieAudio.play();
     return "It's a tie!";
   }
 
@@ -18,15 +22,17 @@ function determineWinner(playerChoice, computerChoice) {
     (playerChoice === "Scissors" && computerChoice === "Paper")
   ) {
     playerScore++;
+    winAudio.play();
     return "You win!";
   }
 
   computerScore++;
+  looseAudio.play();
   return "Computer wins!";
 }
 
 function handlePlayerChoice(playerChoice) {
-  const computerChoice = getComputerChoice(); // Get computer's choice
+  const computerChoice = getComputerChoice();
   const resultMessage = determineWinner(playerChoice, computerChoice);
 
   const resultElement = document.getElementById("result");
