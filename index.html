@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors-Game</title>
     <script defer src="index.js"></script>
-</head>
-<body>
-    <h1>Rock Paper Scissor Game</h1>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors Game</h1>
+    <p>Choose your move!!!</p>
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
-    <p id="result"></p> 
-</body>
+
+    <div id="scores">
+      <p>Player Score: <span id="playerScore">0</span></p>
+      <p>Computer Score: <span id="computerScore">0</span></p>
+    </div>
+
+    <p id="result"></p>
+
+    <button id="reset">Reset Game</button>
+  </body>
 </html>
